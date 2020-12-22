@@ -175,6 +175,11 @@ exports.getFileName = function getFileName(calling_file) {
   Error.prepareStackTrace = origPST;
   Error.stackTraceLimit = origSTL;
 
+  // set app path if filename is empty
+  if (!fileName) {
+    fileName = global.appPath;
+  }
+
   // handle filename that starts with "file://"
   var fileSchema = 'file://';
   if (fileName.indexOf(fileSchema) === 0) {
