@@ -177,7 +177,7 @@ exports.getFileName = function getFileName(calling_file) {
 
   // set app path if filename is empty
   if (!fileName) {
-    fileName = global.appPath;
+    fileName = global.frontPath;
   }
 
   // handle filename that starts with "file://"
